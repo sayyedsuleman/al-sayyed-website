@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Al Sayyed Studio</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  FREE SHIPPING ON ORDERS ABOVE ₹1599
+</div>
+
+
+<!-- HEADER -->
+<header>
+
+  <a href="#home" class="logo">
+    <strong>AL SAYYED</strong>
+    <span>STUDIO</span>
+  </a>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#categories">COLLECTIONS</a>
+    <a href="#shop">SHOP</a>
+    <a href="#about">ABOUT</a>
+  </nav>
+
+  <div class="header-buttons">
+    <button onclick="openSearch()">SEARCH</button>
+
+    <button onclick="openCart()">
+      BAG <span id="cartCount">0</span>
+    </button>
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <p class="gold" id="heroTag">
+      THE NEW STANDARD OF ELEGANCE
+    </p>
+
+    <h1 id="heroTitle">
+      Wear your<br>
+      <i>presence.</i>
+    </h1>
+
+    <p id="heroDescription">
+      Discover rich attars, refined perfumes and timeless
+      fragrances crafted for a signature that stays with you.
+    </p>
+
+    <button class="hero-button" onclick="heroShop()">
+      <span id="heroButton">EXPLORE FRAGRANCE</span> →
+    </button>
+
+  </div>
+
+
+  <div class="hero-image-wrap">
+
+    <div class="hero-ring"></div>
+
+<img id="heroImage" src="images/fragrance.jpg">
+
+  </div>
+
+
+  <div class="hero-dots">
+
+    <button
+      class="hero-dot active"
+      onclick="showHero(0)">
+    </button>
+
+    <button
+      class="hero-dot"
+      onclick="showHero(1)">
+    </button>
+
+    <button
+      class="hero-dot"
+      onclick="showHero(2)">
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- SEARCH + OFFER -->
+<section class="tools">
+
+  <div class="search-area">
+
+    <label>FIND YOUR SIGNATURE</label>
+
+    <div class="search-box">
+
+      <span>⌕</span>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search products..."
+        oninput="searchProducts(this.value)"
+      >
+
+    </div>
+
+  </div>
+
+
+  <div class="offer">
+
+    <div>
+      <small>LIMITED OFFER</small>
+      <strong>20% OFF</strong>
+    </div>
+
+    <div>
+      <span>ON YOUR FIRST ORDER</span>
+      <b>CODE: AL15</b>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+
+  <div class="section-title">
+
+    <div>
+      <p class="gold">EXPLORE THE HOUSE</p>
+
+      <h2>
+        Curated for<br>
+        <i>your world.</i>
+      </h2>
+    </div>
+
+    <span>FRAGRANCE · CLOTHING · JEWELLERY</span>
+
+  </div>
+
+
+  <div class="category-grid">
+
+    <div
+      class="category-card active"
+      onclick="selectCategory('Fragrance')"
+    >
+
+      <div class="category-art fragrance-art">
+        <div class="bottle-art"></div>
+      </div>
+
+      <small>01 / FRAGRANCE</small>
+
+      <h3>Fragrance</h3>
+
+      <p>
+        Attars, perfumes and aromatic essentials.
+      </p>
+
+      <b>EXPLORE →</b>
+
+    </div>
+
+
+    <div
+      class="category-card"
+      onclick="selectCategory('Clothing')"
+    >
+
+      <div class="category-art clothing-art">
+        <div class="shirt-art"></div>
+      </div>
+
+      <small>02 / CLOTHING</small>
+
+      <h3>Clothing</h3>
+
+      <p>
+        Modern essentials with a refined identity.
+      </p>
+
+      <b>EXPLORE →</b>
+
+    </div>
+
+
+    <div
+      class="category-card"
+      onclick="selectCategory('Jewellery')"
+    >
+
+      <div class="category-art jewellery-art">
+        <div class="ring-art"></div>
+      </div>
+
+      <small>03 / JEWELLERY</small>
+
+      <h3>Jewellery</h3>
+
+      <p>
+        Timeless details made to make a statement.
+      </p>
+
+      <b>EXPLORE →</b>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SUB CATEGORIES -->
+<section class="subcategories">
+
+  <p class="gold">SHOP BY CATEGORY</p>
+
+  <h2>
+    <span id="selectedCategory">Fragrance</span>
+    <i>collection.</i>
+  </h2>
+
+  <div id="subCategoryButtons"></div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<section class="products" id="shop">
+
+  <div class="products-top">
+
+    <span id="productLabel">
+      FRAGRANCE / ALL
+    </span>
+
+    <span id="productNumber">
+      0 PRODUCTS
+    </span>
+
+  </div>
+
+
+  <div
+    class="product-grid"
+    id="productGrid"
+  ></div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+  <div class="about-visual">
+    <div class="about-circle"></div>
+    <div class="about-bottle"></div>
+  </div>
+
+
+  <div class="about-content">
+
+    <p class="gold">AL SAYYED STUDIO</p>
+
+    <h2>
+      Quiet luxury.<br>
+      <i>Strong presence.</i>
+    </h2>
+
+    <p>
+      Al Sayyed Studio brings together premium fragrance,
+      modern clothing and timeless jewellery for people
+      who believe style is a signature.
+    </p>
+
+    <a href="#shop">
+      DISCOVER THE COLLECTION →
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div>
+
+    <h2>AL SAYYED</h2>
+
+    <span>STUDIO</span>
+
+    <p>
+      Fragrance · Clothing · Jewellery
+    </p>
+
+  </div>
+
+
+  <div class="footer-links">
+
+    <a href="#home">Home</a>
+    <a href="#categories">Collections</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+
+  </div>
+
+
+  <small>
+    © 2026 AL SAYYED STUDIO. ALL RIGHTS RESERVED.
+  </small>
+
+</footer>
+
+
+<!-- SEARCH OVERLAY -->
+<div
+  class="search-overlay"
+  id="searchOverlay"
+>
+
+  <button onclick="closeSearch()">×</button>
+
+  <p class="gold">
+    SEARCH THE STUDIO
+  </p>
+
+  <h2>
+    Find your<br>
+    <i>signature.</i>
+  </h2>
+
+  <input
+    id="bigSearch"
+    type="text"
+    placeholder="Search product..."
+    oninput="searchProducts(this.value)"
+  >
+
+</div>
+
+
+<!-- CART -->
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  onclick="cartOutside(event)"
+>
+
+  <div class="cart">
+
+    <div class="cart-head">
+
+      <h2>Your Bag</h2>
+
+      <button onclick="closeCart()">×</button>
+
+    </div>
+
+
+    <div
+      id="cartItems"
+      class="cart-items"
+    ></div>
+
+
+    <div class="cart-total">
+
+      <span>TOTAL</span>
+
+      <strong id="cartTotal">
+        ₹0
+      </strong>
+
+    </div>
+
+
+    <!-- WHATSAPP ONLY -->
+    <button
+      class="whatsapp-button"
+      onclick="orderOnWhatsApp()"
+    >
+      ORDER ON WHATSAPP
+    </button>
+
+
+    <p class="cart-note">
+      No online payment required.<br>
+      Order confirmation will be done on WhatsApp.
+    </p>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
